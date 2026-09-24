@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0C10">
+  <title>STREAMX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="m17 2-5 5-5-5"></path></symbol>
+    <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="m12 7 4.5 3.3-1.7 5.3h-5.6L7.5 10.3 12 7Z"></path></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"></path></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0Z"></path><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3M9 20h6M12 14v6"></path></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M12 7v6M12 16.5v.5"></path></symbol>
+  </svg>
+
+  <div id="splash"><h1>STREAM<span class="x">X</span></h1></div>
+
+  <div id="topBar">
+    <h1>STREAM<span class="x">X</span></h1>
+    <div id="nowPlaying">جاهز للبث</div>
+  </div>
+
+  <div id="playerContainer">
+    <video id="video" playsinline webkit-playsinline></video>
+    <div class="player-overlay" id="playerOverlay">
+      <div class="spinner"></div>
+      <div class="msg" id="playerMsg">جاري التحميل...</div>
+    </div>
+    <div class="p-btn" id="fsBtn" title="ملء الشاشة">
+      <svg class="icon"><use href="#i-expand"></use></svg>
+    </div>
+  </div>
+
+  <div id="mainApp">
+    <div class="search-box" id="searchSection">
+      <input type="text" id="searchInput" placeholder="ابحث عن قناة..." autocomplete="off">
+    </div>
+
+    <div id="categoriesBar" class="hidden"></div>
+
+    <div id="contentArea">
+      <div id="loader" class="hidden"><div class="spinner"></div>جاري تحميل القنوات...</div>
+      <div id="channelsList"></div>
+
+      <div id="matchesPage" class="hidden">
+        <div id="matchesTools">
+          <div id="leaguesBar"></div>
+          <div class="daybar">
+            <button class="daybtn" id="prevDay" title="اليوم السابق">›</button>
+            <div class="daylabel"><span id="dayName"></span><small id="dayDate"></small></div>
+            <input type="date" id="datePicker">
+            <button class="daybtn" id="nextDay" title="اليوم التالي">‹</button>
+          </div>
+        </div>
+        <div id="matchesList"></div>
+      </div>
+    </div>
+
+    <div id="toTop" title="العودة للأعلى">
+      <svg class="icon"><use href="#i-up"></use></svg>
+    </div>
+  </div>
+
+  <div id="bottomNav">
+    <div class="nav-item active" data-target="channels">
+      <svg class="icon"><use href="#i-tv"></use></svg><span>القنوات</span>
+    </div>
+    <div class="nav-item" data-target="matches">
+      <svg class="icon"><use href="#i-ball"></use></svg><span>المباريات</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
